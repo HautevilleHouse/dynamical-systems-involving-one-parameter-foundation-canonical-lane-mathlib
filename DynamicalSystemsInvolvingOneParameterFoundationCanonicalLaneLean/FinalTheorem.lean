@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import DynamicalSystemsInvolvingOneParameterFoundationCanonicalLaneLean.OneParameterFlow
+import DynamicalSystemsInvolvingOneParameterFoundationCanonicalLaneLean.LimitSetAnalysis
+import DynamicalSystemsInvolvingOneParameterFoundationCanonicalLaneLean.BifurcationTheory
+
+namespace HautevilleHouse
+namespace DynamicalSystemsInvolvingOneParameterFoundationCanonicalLaneLean
+
+def ConstrainedOneParameterClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_one_parameter_endgame (A : AdmissibleClass) :
+    ConstrainedOneParameterClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DynamicalSystemsInvolvingOneParameterFoundationCanonicalLaneLean
+end HautevilleHouse
